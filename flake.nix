@@ -2,6 +2,10 @@
   description = "A structured Base16/Base24 YAML theme flake";
 
   inputs = {
+    base24-themes = {
+      url = "github:chrisppy/base24-themes";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";

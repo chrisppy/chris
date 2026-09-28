@@ -14,10 +14,19 @@
           ".gitattributes"
           ".gitignore"
         ];
+        formatter.taplo.options = [
+          "fmt"
+          "-o"
+          "align_entries=true"
+          "-o"
+          "reorder_keys=true"
+        ];
       };
 
       programs = {
         prettier.enable = true;
+        just.enable = true;
+        taplo.enable = true;
         deadnix = {
           enable = true;
           priority = 1;

@@ -1,0 +1,34 @@
+@use "camden";
+
+:root {
+    --background: #{camden.$base00};
+    --background-secondary: #{camden.$base01};
+    --background-highlight: #{camden.$base02};
+
+    --foreground-muted: #{camden.$base04};
+    --foreground: #{camden.$base05};
+    --foreground-bright: #{camden.$base06};
+    --foreground-maximum: #{camden.$base07};
+
+    --red: #{camden.$base08};
+    --orange: #{camden.$base09};
+    --yellow: #{camden.$base0A};
+    --green: #{camden.$base0B};
+    --cyan: #{camden.$base0C};
+    --blue: #{camden.$base0D};
+    --magenta: #{camden.$base0E};
+    --gray: #{camden.$base0F};
+
+    --red-bright: #{camden.$base12};
+    --yellow-bright: #{camden.$base13};
+    --green-bright: #{camden.$base14};
+    --cyan-bright: #{camden.$base15};
+    --blue-bright: #{camden.$base16};
+    --magenta-bright: #{camden.$base17};
+
+    --font-mono: "FiraCode Nerd Font", monospace;
+
+    --content-width: 72rem;
+    --reading-width: 48rem;
+    --border-radius: 0.25rem;
+}

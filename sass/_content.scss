@@ -1,0 +1,31 @@
+ul,
+ol {
+    padding-left: 1.5rem;
+}
+
+li::marker {
+    color: var(--orange);
+}
+
+table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--background-highlight);
+    text-align: left;
+}
+
+th {
+    background: var(--background-secondary);
+    color: var(--foreground-bright);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
