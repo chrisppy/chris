@@ -6,12 +6,12 @@
         <title>{% block title %}{{ config.title }}{% endblock title %}</title>
         <meta name="description"
               content="{%- block description -%}{{ config.description }}{%- endblock description -%}">
-        <link rel="stylesheet" href="{{ get_url(path = "style.css") }}">
+        <link rel="stylesheet" href="{{ get_url(path = 'style.css') }}">
         {% if config.generate_feeds %}
             <link rel="alternate"
                   type="application/atom+xml"
                   title="{{ config.title }} Atom Feed"
-                  href="{{ get_url(path = "atom.xml") }}">
+                  href="{{ get_url(path = 'atom.xml') }}">
         {% endif %}
     </head>
     <body class="site">
@@ -19,10 +19,10 @@
             <div class="container">
                 <a class="site-title" href="{{ config.base_url }}">{{ config.title }}</a>
                 <nav class="site-nav" aria-label="Main navigation">
-                    <a href="{{ get_url(path=" @/about.md") }}">about</a>
-                    <a href="{{ get_url(path=" @/skills.md") }}">skills</a>
-                    <a href="{{ get_url(path=" @/projects/_index.md") }}">projects</a>
-                    <a href="{{ get_url(path=" @/blog/_index.md") }}">blog</a>
+                    <a href="{{ get_url(path='@/about.md') }}">about</a>
+                    <a href="{{ get_url(path='@/skills.md') }}">skills</a>
+                    <a href="{{ get_url(path='@/projects/_index.md') }}">projects</a>
+                    <a href="{{ get_url(path='@/blog/_index.md') }}">blog</a>
                 </nav>
             </div>
         </header>
@@ -36,7 +36,7 @@
             <div class="container">
                 <span>© {{ now() | date(format = "%Y") }} {{ config.extra.author }}</span>
                 <span>
-                    <a href="{{ get_url(path = "atom.xml") }}">atom</a>
+                    <a href="{{ get_url(path = 'atom.xml') }}">atom</a>
                     ·
                     <span>built with Zola</span>
                 </span>

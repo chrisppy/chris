@@ -1,60 +1,56 @@
 +++
 title = "Skills"
-description = "Languages, technologies, and tools I work with."
+description = "The technologies and areas I work with."
 template = "page.html"
 +++
 
-<div class="skills">
-    <section class="skill-group">
-        <h3>Languages</h3>
+## Software Development
 
-```
-    <p>
-        Go · Java · Rust · Hare · HTML · CSS
-    </p>
-</section>
+I build and maintain enterprise software across multiple layers of the
+application stack.
 
-<section class="skill-group">
-    <h3>Data & APIs</h3>
+- **Languages:** Go, Java, Rust, Hare
+- **Applications:** backend services, desktop applications, web services
+- **Integration:** REST, SOAP, JMS, XML, JSON
+- **Build & dependency management:** Maven
 
-    <p>
-        XML · JSON · TOML · YAML · REST · SOAP · JMS
-    </p>
-</section>
+## Systems & Infrastructure
 
-<section class="skill-group">
-    <h3>DevOps</h3>
+I enjoy working on the systems surrounding software as much as the software
+itself.
 
-    <p>
-        Jenkins · Docker · Podman · OpenShift · CI/CD
-    </p>
-</section>
+- **Linux:** NixOS, Alpine, CentOS, Ubuntu
+- **Infrastructure:** declarative configuration, self-hosting, containers
+- **Containers:** Docker, Podman, OpenShift
+- **Automation:** CI/CD, Jenkins
+- **Configuration:** Nix, TOML, YAML
 
-<section class="skill-group">
-    <h3>Linux & Infrastructure</h3>
+## Development Tools
 
-    <p>
-        NixOS · Alpine · CentOS · Ubuntu · declarative configuration
-    </p>
-</section>
+My development environment tends to favor simple, keyboard-driven tools and
+reproducible workflows.
 
-<section class="skill-group">
-    <h3>Tools</h3>
+- **Version control:** Git, GitHub, SourceHut
+- **Editors:** Helix, Vim, VS Code
+- **IDEs:** IntelliJ IDEA, Eclipse
+- **Tooling:** Nix, Maven, Zola, Sass
 
-    <p>
-        Git · GitHub · SourceHut · Helix · Vim · VS Code · IntelliJ ·
-        Eclipse
-    </p>
-</section>
+## CAD & Fabrication
 
-<section class="skill-group">
-    <h3>Other</h3>
+I also enjoy projects where software and physical engineering overlap.
 
-    <p>
-        Oracle · AIXM · OpenShift · Windows desktop applications ·
-        build systems · software integration
-    </p>
-</section>
-```
+- **CAD:** FreeCAD
+- **Design:** parametric modeling, BIM
+- **Fabrication:** 3D printing
 
-</div>
+## What I'm Interested In
+
+Some of the areas I spend the most time exploring outside of day-to-day
+development include:
+
+- NixOS and declarative systems
+- Self-hosted infrastructure
+- Open-source software
+- Rust and systems programming
+- Reproducible development environments
+- FreeCAD, 3D printing, and BIM

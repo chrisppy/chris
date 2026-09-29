@@ -1,49 +1,38 @@
 {% extends "base.html" %}
-{% block title %}{{ config.title }}{% endblock title %}
+{% block title %}{{ section.title }}{% endblock title %}
+{% block description %}{{ section.description }}{% endblock description %}
 {% block content %}
     <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title" class="hero-title">{{ config.extra.author }}</h1>
-        <p class="hero-subtitle">Software engineer · NixOS enthusiast · builder of things</p>
-        <p>
-            I'm a software engineer with 14+ years of experience building
-            enterprise systems for federal programs including USPS, FAA, and DHS.
-            I work primarily with Go, Java, and Rust, with experience across
-            backend services, desktop applications, web services, data integration,
-            and containerized systems.
-        </p>
-        <p>
-            I'm also interested in the tooling and infrastructure surrounding
-            software development — CI/CD, reproducible builds, Linux, and
-            declarative configuration.
-        </p>
-        <p>
-            These days, a lot of my personal work revolves around NixOS,
-            self-hosting, open-source software, and Rust.
-        </p>
+        <h1 id="hero-title" class="hero-title">{{ section.title }}</h1>
+        <div class="content">{{ section.content | safe }}</div>
     </section>
     <section aria-labelledby="recent-posts">
         <h2 id="recent-posts">Recent posts</h2>
         {% set blog = get_section(path="blog/_index.md") %}
         {% if blog.pages %}
             <ul class="post-list">
-                {% for post in blog.pages | slice(end=5) %}
-                    <li class="post">
-                        <h3 class="post-title">
-                            <a href="{{ post.permalink }}">{{ post.title }}</a>
-                        </h3>
-                        <div class="post-date">
-                            <time datetime="{{ post.date }}">
-                                {{ post.date | date(format = "%Y-%m-%d") }}
-                            </time>
-                        </div>
-                        {% if post.description %}
-                            <p class="post-summary">{{ post.description }}</p>
-                        {% endif %}
-                    </li>
+                {% for post in blog.pages %}
+                    {% if loop.index <= 5 %}
+                        <li class="post">
+                            <h3 class="post-title">
+                                <a href="{{ post.permalink }}">{{ post.title }}</a>
+                            </h3>
+                            {% if post.date %}
+                                <div class="post-date">
+                                    <time datetime="{{ post.date }}">
+                                        {{ post.date | date(format="%Y-%m-%d") }}
+                                    </time>
+                                </div>
+                            {% endif %}
+                            {% if post.description %}
+                                <p class="post-summary">{{ post.description }}</p>
+                            {% endif %}
+                        </li>
+                    {% endif %}
                 {% endfor %}
             </ul>
             <p>
-                <a href="{{ get_url(path = "@/blog/_index.md") }}">./blog</a>
+                <a href="{{ get_url(path='@/blog/_index.md') }}">./blog</a>
             </p>
         {% else %}
             <p>No posts yet.</p>

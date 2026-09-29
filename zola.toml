@@ -8,8 +8,10 @@ build_search_index = false
 compile_sass       = true
 minify_html        = true
 
-feed_filename  = ["atom.xml"]
+feed_filenames = ["atom.xml"]
 generate_feeds = true
+
+taxonomies = [{ name = "tags", feed = true }]
 
 [extra]
 author = "Chris Palmer"
