@@ -14,19 +14,40 @@
           ".gitattributes"
           ".gitignore"
         ];
-        formatter.taplo.options = [
-          "fmt"
-          "-o"
-          "align_entries=true"
-          "-o"
-          "reorder_keys=true"
-        ];
+        formatter = {
+          djlint.options = [
+            "--profile=tera"
+          ];
+          taplo.options = [
+            "fmt"
+            "-o"
+            "align_entries=true"
+            "-o"
+            "reorder_keys=true"
+          ];
+        };
       };
 
       programs = {
-        prettier.enable = true;
+        deno = {
+          enable = true;
+          includes = [
+            "*.markdown"
+            "*.md"
+            "*.scss"
+          ];
+        };
+        djlint = {
+          enable = true;
+          includes = [
+            "*.html"
+          ];
+          lint = true;
+        };
         just.enable = true;
+        mdformat.enable = true;
         taplo.enable = true;
+
         deadnix = {
           enable = true;
           priority = 1;

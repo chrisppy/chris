@@ -4,10 +4,12 @@ default:
 theme:
     nix run .#generate-camden-scss
 
-serve: theme
+prepare: theme
+
+serve: prepare
     zola serve
 
-build: theme
+build: prepare
     zola build
 
 check:
@@ -20,5 +22,3 @@ rebuild: clean build
 
 fmt:
     nix fmt
-
-dev: check serve

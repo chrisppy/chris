@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block title %}{{ section.title }} · {{ config.title }}{% endblock title %} {% block description %} {{ section.description |
+default(value=config.description) }} {% endblock description %} {% block content
+    %}
+<section class="page">
+    <header>
+        <h1>{{ section.title }}</h1>
+        {% if section.description %}
+            <p class="hero-subtitle">{{ section.description }}</p>
+        {% endif %}
+    </header>
+    <div class="content">{{ section.content | safe }}</div>
+    {% if section.pages %}
+        <ul class="post-list">
+            {% for item in section.pages %}
+                <li class="post">
+                    <h2 class="post-title">
+                        <a href="{{ item.permalink }}">{{ item.title }}</a>
+                    </h2>
+                    {% if item.date %}
+                        <div class="post-date">
+                            <time datetime="{{ item.date }}">
+                                {{ item.date | date(format = "%Y-%m-%d") }}
+                            </time>
+                        </div>
+                    {% endif %}
+                    {% if item.description %}
+                        <p class="post-summary">{{ item.description }}</p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</section>
+{% endblock content %}

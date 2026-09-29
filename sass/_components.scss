@@ -1,109 +1,109 @@
 .hero {
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
 }
 
 .hero-title {
-    margin-bottom: 0.5rem;
-    font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: 0.5rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
 
-    &::before {
-        color: var(--green);
-        content: "$ ";
-    }
+  &::before {
+    color: var(--green);
+    content: "$ ";
+  }
 }
 
 .hero-subtitle {
-    margin-top: 0;
-    color: var(--foreground-muted);
-    font-size: 1.1rem;
+  margin-top: 0;
+  color: var(--foreground-muted);
+  font-size: 1.1rem;
 }
 
 .meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1rem;
-    margin-bottom: 2rem;
-    color: var(--foreground-muted);
-    font-size: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  color: var(--foreground-muted);
+  font-size: 0.875rem;
 
-    &::before {
-        color: var(--green);
-        content: "[";
-    }
+  &::before {
+    color: var(--green);
+    content: "[";
+  }
 
-    &::after {
-        color: var(--green);
-        content: "]";
-    }
+  &::after {
+    color: var(--green);
+    content: "]";
+  }
 }
 
 .tag {
-    color: var(--cyan);
+  color: var(--cyan);
 
-    &::before {
-        color: var(--green);
-        content: "#";
-    }
+  &::before {
+    color: var(--green);
+    content: "#";
+  }
 }
 
 .post-list {
-    display: grid;
-    gap: 1.5rem;
-    margin: 2rem 0;
-    padding: 0;
-    list-style: none;
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
 }
 
 .post {
-    padding: 1.25rem;
-    border: 1px solid var(--background-highlight);
-    border-radius: var(--border-radius);
-    background: var(--background-secondary);
+  padding: 1.25rem;
+  border: 1px solid var(--background-highlight);
+  border-radius: var(--border-radius);
+  background: var(--background-secondary);
 }
 
 .post-title {
-    margin: 0;
+  margin: 0;
 
-    &::before {
-        content: "";
+  &::before {
+    content: "";
+  }
+
+  a {
+    color: var(--foreground-bright);
+
+    &:hover {
+      color: var(--orange);
     }
-
-    a {
-        color: var(--foreground-bright);
-
-        &:hover {
-            color: var(--orange);
-        }
-    }
+  }
 }
 
 .post-summary {
-    margin-bottom: 0;
-    color: var(--foreground-muted);
+  margin-bottom: 0;
+  color: var(--foreground-muted);
 }
 
 .post-date {
-    color: var(--yellow);
-    font-size: 0.875rem;
+  color: var(--yellow);
+  font-size: 0.875rem;
 }
 
 .skills {
-    display: grid;
-    gap: 1rem;
-    margin: 2rem 0;
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
 .skill-group {
-    padding: 1rem;
-    border: 1px solid var(--background-highlight);
-    background: var(--background-secondary);
+  padding: 1rem;
+  border: 1px solid var(--background-highlight);
+  background: var(--background-secondary);
 
-    h3 {
-        margin-top: 0;
-        color: var(--orange);
+  h3 {
+    margin-top: 0;
+    color: var(--orange);
 
-        &::before {
-            content: "";
-        }
+    &::before {
+      content: "";
     }
+  }
 }
