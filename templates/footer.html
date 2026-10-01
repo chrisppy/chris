@@ -1,0 +1,12 @@
+<footer class="site-footer">
+    <div class="container">
+        <span>© {{ now() | date(format="%Y") }} {{ config.extra.author }}</span>
+        <span>
+            <a href="{{ get_url(path="license/") }}">MIT / CC BY 4.0</a>
+            ·
+            <a href="{{ get_url(path="atom.xml") }}">atom</a>
+            ·
+            <span>built with Zola</span>
+        </span>
+    </div>
+</footer>
