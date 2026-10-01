@@ -18,12 +18,7 @@
         <header class="site-header">
             <div class="container">
                 <a class="site-title" href="{{ config.base_url }}">{{ config.title }}</a>
-                <nav class="site-nav" aria-label="Main navigation">
-                    <a href="{{ get_url(path='@/about.md') }}">about</a>
-                    <a href="{{ get_url(path='@/skills.md') }}">skills</a>
-                    <a href="{{ get_url(path='@/projects/_index.md') }}">projects</a>
-                    <a href="{{ get_url(path='@/blog/_index.md') }}">blog</a>
-                </nav>
+                {% include "nav.html" %}
             </div>
         </header>
         <main>
@@ -32,15 +27,6 @@
                 {% endblock content %}
             </div>
         </main>
-        <footer class="site-footer">
-            <div class="container">
-                <span>© {{ now() | date(format = "%Y") }} {{ config.extra.author }}</span>
-                <span>
-                    <a href="{{ get_url(path = 'atom.xml') }}">atom</a>
-                    ·
-                    <span>built with Zola</span>
-                </span>
-            </div>
-        </footer>
+        {% include "footer.html" %}
     </body>
 </html>

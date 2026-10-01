@@ -22,7 +22,7 @@ A lifelong baseball fan, I especially enjoy following the Baltimore Orioles,
 watching the game, and spending time around baseball with my family.
 
 These days, much of my personal work revolves around NixOS, self-hosting,
-open-source software, Rust, FreeCAD, 3D printing, BIM, and baseball.
+open-source software, FreeCAD, 3D printing, BIM, and baseball.
 
 The common thread is building things that are reliable, reproducible, and
 pleasantly boring to operate.

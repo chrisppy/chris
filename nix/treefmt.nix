@@ -10,6 +10,7 @@
         on-unmatched = "fatal";
         global.excludes = [
           "LICENSE"
+          "LICENSE-CONTENT"
           ".git"
           ".gitattributes"
           ".gitignore"
