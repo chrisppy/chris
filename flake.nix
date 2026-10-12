@@ -15,11 +15,9 @@
 
   outputs =
     inputs:
-    inputs.devfmt.inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import inputs.devfmt.inputs.systems;
+    inputs.devfmt.lib.mkFlake { inherit inputs; } {
       imports = [
-        (inputs.devfmt.inputs.import-tree ./nix)
-        inputs.devfmt.flakeModules.default
+        (inputs.devfmt.lib.importTree ./nix)
       ];
     };
 }

@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791826608,
-        "narHash": "sha256-84qO1N1qUIZyWpCpoI7HT57PPNHhIsKCCphNbHEp7UM=",
+        "lastModified": 1791828329,
+        "narHash": "sha256-VHq9fok3PcemcoF15vsD2s90i3UvhnDwtMctWt8CAMM=",
         "owner": "chrisppy",
         "repo": "base24-themes",
-        "rev": "6bba38a1f0182c52a72ad36269d5fa8d8402c00f",
+        "rev": "839822bcb38bfa6e21fb576f875e48c43c15e764",
         "type": "github"
       },
       "original": {
@@ -34,11 +34,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1791826510,
-        "narHash": "sha256-/uZhVpI0ApE7UcUFWmML/XnW+XzeR72VprULHKPYOtw=",
+        "lastModified": 1791828129,
+        "narHash": "sha256-K1fnC1E+8xh+eUx1oFYNJUsWQZgNNUNucbo8piSZXio=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "78f45de99a82a26be2a669e07bc4de39a8d3656d",
+        "rev": "63a4253970c23f8ba265081698d6236bc7b8176d",
         "type": "github"
       },
       "original": {
@@ -59,11 +59,11 @@
         "treefmt-nix": "treefmt-nix_4"
       },
       "locked": {
-        "lastModified": 1791827054,
-        "narHash": "sha256-a1bQHwzTVOrd56qNkGg4dJGUpXMwahpMkLqZWATJULo=",
+        "lastModified": 1791828129,
+        "narHash": "sha256-K1fnC1E+8xh+eUx1oFYNJUsWQZgNNUNucbo8piSZXio=",
         "owner": "chrisppy",
         "repo": "devfmt",
-        "rev": "27284e486acc7ba759fd47f341edf855ab0b1c34",
+        "rev": "63a4253970c23f8ba265081698d6236bc7b8176d",
         "type": "github"
       },
       "original": {
