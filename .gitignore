@@ -2,7 +2,7 @@
 /public/
 
 # Generated theme
-/sass/_camden.scss
+# /sass/_camden.scss
 
 # Nix
 /result
