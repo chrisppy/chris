@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792301003,
-        "narHash": "sha256-h6YMpFNskjAs2LexGBupvTPi35ui/MJSknNVoLzEjT0=",
+        "lastModified": 1792339899,
+        "narHash": "sha256-9fmvl96zLrGWYcsV8WTCZzeqTYFXx1o1MtRe8rBld4c=",
         "owner": "chrisppy",
         "repo": "base24-themes",
-        "rev": "fa8351574adf5b51e46470d6706bed64c48e315c",
+        "rev": "40d0bb9087bb97c0028b38b7406e0a424ae70709",
         "type": "github"
       },
       "original": {
