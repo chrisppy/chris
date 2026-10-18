@@ -3,12 +3,38 @@
 {
   perSystem =
     { pkgs, ... }:
+
+    let
+      base24 = inputs.base24-themes.lib.base24;
+      theme = inputs.base24-themes.themes.camden;
+      colors = base24.getColors theme;
+
+      scssColors = builtins.concatStringsSep "\n" (
+        map (name: "$" + name + ": #" + colors.${name} + ";") base24.colorNames
+      );
+
+      cssColors = builtins.concatStringsSep "\n" (
+        map (name: "  --${name}: #" + colors.${name} + ";") base24.colorNames
+      );
+
+      generatedScss = ''
+        // Generated from chrisppy/base24-themes
+        // Scheme: camden
+        // Variant: ${theme.variant}
+        // Do not edit manually.
+
+        ${scssColors}
+
+        :root {
+        ${cssColors}
+        }
+      '';
+    in
     {
       packages.generate-camden-scss = pkgs.writeShellApplication {
         name = "generate-camden-scss";
 
         runtimeInputs = [
-          pkgs.yq-go
           pkgs.coreutils
         ];
 
@@ -16,36 +42,12 @@
           set -euo pipefail
 
           output="''${1:-sass/_camden.scss}"
-          theme="${inputs.base24-themes}/themes/camden.yaml"
 
           mkdir -p "$(dirname "$output")"
 
-          {
-            echo "// Generated from chrisppy/base24-themes"
-            echo "// Scheme: camden"
-            echo "// Variant: dark"
-            echo "// Do not edit manually."
-            echo
-
-            yq -r '
-              to_entries
-              | .[]
-              | select(.key | test("^base(0[0-9A-Fa-f]|1[0-7])$"))
-              | "$" + .key + ": #" + .value + ";"
-            ' "$theme"
-
-            echo
-            echo ":root {"
-
-            yq -r '
-              to_entries
-              | .[]
-              | select(.key | test("^base(0[0-9A-Fa-f]|1[0-7])$"))
-              | "  --\(.key): #" + .value + ";"
-            ' "$theme"
-
-            echo "}"
-          } > "$output"
+          cat > "$output" <<'THEME_SCSS'
+          ${generatedScss}
+          THEME_SCSS
 
           echo "Generated $output"
         '';
