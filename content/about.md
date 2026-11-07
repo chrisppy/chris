@@ -41,8 +41,8 @@ game with my family.
 This site is a small example of the way I like to build things: simple, static,
 reproducible, and easy to maintain.
 
-It's built with Zola and Sass, uses my Camden Base24 color scheme, and is hosted
-as a static site. There is no JavaScript application layer, database, or
+It's built with Zola and Sass, uses my Birdland Base24 color scheme, and is
+hosted as a static site. There is no JavaScript application layer, database, or
 complicated deployment stack behind it.
 
 The goal is not to build the most elaborate website. It's to build something
