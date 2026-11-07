@@ -6,7 +6,9 @@
 
     let
       base24 = inputs.base24-themes.lib.base24;
-      theme = inputs.base24-themes.themes.camden;
+      # Camden was renamed Birdland in base24-themes, and its themes moved
+      # under lib.base24. The generated file keeps its _camden.scss name.
+      theme = base24.themes.birdland;
       colors = base24.getColors theme;
 
       scssColors = builtins.concatStringsSep "\n" (
@@ -19,7 +21,7 @@
 
       generatedScss = ''
         // Generated from chrisppy/base24-themes
-        // Scheme: camden
+        // Scheme: ${theme.name}
         // Variant: ${theme.variant}
         // Do not edit manually.
 
