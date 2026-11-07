@@ -6,6 +6,12 @@
         <title>{% block title %}{{ config.title }}{% endblock title %}</title>
         <meta name="description"
               content="{%- block description -%}{{ config.description }}{%- endblock description -%}">
+        <link rel="icon" href="{{ get_url(path = 'favicon.ico') }}" sizes="48x48">
+        <link rel="icon"
+              href="{{ get_url(path = 'favicon.svg') }}"
+              type="image/svg+xml">
+        <link rel="apple-touch-icon"
+              href="{{ get_url(path = 'apple-touch-icon.png') }}">
         <link rel="stylesheet" href="{{ get_url(path = 'style.css') }}">
         {% if config.generate_feeds %}
             <link rel="alternate"
