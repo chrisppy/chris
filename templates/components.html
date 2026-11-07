@@ -7,11 +7,11 @@
         url          raw URL of the markdown file
         strip_title  drop a leading "# Title" line, since the page already has one
         stop_at      drop everything from this text onward, e.g. "## License"
-        link_from    a link target to rewrite, e.g. "./docs/usage.md"
-        link_to      what to rewrite link_from to, e.g. "#usage"
+        links        map of link/image targets to rewrite, e.g.
+                     { "./docs/usage.md" = "#usage" }
         base         prefix for remaining relative "./" links, e.g. a GitHub blob URL
 -#}
-{%- component remote_md(url: string, strip_title: bool = false, stop_at: string = "", link_from: string = "", link_to: string = "", base: string = "") -%}
+{%- component remote_md(url: string, strip_title: bool = false, stop_at: string = "", links: map = {}, base: string = "") -%}
     {%- set md = load_data(url=url, format="plain", required=false) -%}
     {%- if md -%}
         {%- if strip_title and md is starting_with(pat="# ") -%}
@@ -21,9 +21,9 @@
         {%- if stop_at -%}
             {%- set md = md | split(pat=stop_at) | first -%}
         {%- endif -%}
-        {%- if link_from -%}
-            {%- set md = md | replace(from="](" ~ link_from ~ ")", to="](" ~ link_to ~ ")") -%}
-        {%- endif -%}
+        {%- for from, to in links -%}
+            {%- set_global md = md | replace(from="](" ~ from ~ ")", to="](" ~ to ~ ")") -%}
+        {%- endfor -%}
         {%- if base -%}
             {%- set md = md | replace(from="](./", to="](" ~ base) -%}
         {%- endif -%}
