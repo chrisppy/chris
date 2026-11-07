@@ -8,9 +8,8 @@ tags = ["nix", "nixos", "open-source", "quickshell", "rust", "swift", "website"]
 +++
 
 In my first post at the end of September, I said I'd write about whatever I'm
-working on. Since then that has added up to five new public repos, a rework of
-a sixth, and nearly 170 commits. Here's what they are and how they fit
-together.
+working on. Since then that has added up to five new public repos, a rework of a
+sixth, and nearly 170 commits. Here's what they are and how they fit together.
 
 ## devfmt: one formatting setup for everything
 
@@ -46,8 +45,8 @@ QML and SVG previews. A single module for NixOS and Home Manager exposes the
 selected theme as `config.lib.base24`.
 
 Along the way the dark theme I'd been calling Camden was renamed **Birdland**
-and retuned to the Orioles' colors. The same library also generates the SCSS
-for this site's colors.
+and retuned to the Orioles' colors. The same library also generates the SCSS for
+this site's colors.
 
 ## Birdland: a desktop shell
 
@@ -97,13 +96,13 @@ Both pressbox repos are at 0.1.0 and very much in their early days.
 
 A few things run through all of these:
 
-- **Automated flake updates.** Every repo got an `update-flake-lock` workflow
-  in mid-October. Most of the commit count since then is those bots keeping
-  inputs current, which is exactly the point.
+- **Automated flake updates.** Every repo got an `update-flake-lock` workflow in
+  mid-October. Most of the commit count since then is those bots keeping inputs
+  current, which is exactly the point.
 - **A justfile everywhere**, so `just fmt`, `just build` and friends work the
   same way in every repo.
-- **Docs split into pages.** Each README now stays short and links to a
-  `docs/` folder for usage, options and per-component details.
+- **Docs split into pages.** Each README now stays short and links to a `docs/`
+  folder for usage, options and per-component details.
 
 ## And this site
 
