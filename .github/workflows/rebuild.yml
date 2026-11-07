@@ -1,0 +1,27 @@
+name: Rebuild site
+
+# Project pages pull their docs from other repos when the site builds, so
+# rebuild nightly to pick up changes there. Needs a Cloudflare Pages deploy
+# hook saved as the CF_PAGES_DEPLOY_HOOK secret.
+on:
+  schedule:
+    # After "Update flake inputs" (02:00 UTC)
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger a Cloudflare Pages build
+        env:
+          DEPLOY_HOOK: ${{ secrets.CF_PAGES_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$DEPLOY_HOOK" ]; then
+            echo "::warning::CF_PAGES_DEPLOY_HOOK isn't set; nothing to do."
+            exit 0
+          fi
+          curl -fsS -X POST "$DEPLOY_HOOK"
