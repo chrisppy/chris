@@ -9,9 +9,11 @@ template = "page.html"
 I build and maintain enterprise software across multiple layers of the
 application stack.
 
-- **Languages:** Go, Java, Rust, Hare
-- **Applications:** backend services, desktop applications, web services
-- **Integration:** REST, SOAP, JMS, XML, JSON
+- **Languages:** Go, Java, Rust, Swift, QML, Hare
+- **Applications:** backend services, desktop applications, web services, iOS
+  apps
+- **UI frameworks:** SwiftUI, Qt Quick / Quickshell
+- **Integration:** REST, SOAP, JMS, XML, JSON, RSS/Atom/JSON Feed
 - **Build & dependency management:** Maven
 
 ## Systems & Infrastructure
@@ -20,10 +22,13 @@ I enjoy working on the systems surrounding software as much as the software
 itself.
 
 - **Linux:** NixOS, Alpine, CentOS, Ubuntu
+- **Desktop:** Wayland, Niri, Quickshell
 - **Infrastructure:** declarative configuration, self-hosting, containers
 - **Containers:** Docker, Podman, OpenShift
 - **Automation:** CI/CD, Jenkins
 - **Configuration:** Nix, TOML, YAML
+- **Nix ecosystem:** flakes, flake-parts, NixOS modules, Home Manager,
+  treefmt-nix
 
 ## Development Tools
 
@@ -33,7 +38,7 @@ reproducible workflows.
 - **Version control:** Git, GitHub, SourceHut
 - **Editors:** Helix, Vim, VS Code
 - **IDEs:** IntelliJ IDEA, Eclipse
-- **Tooling:** Nix, Maven, Zola, Sass
+- **Tooling:** Nix, Maven, Zola, Sass, treefmt, just
 
 ## CAD & Fabrication
 
@@ -50,6 +55,7 @@ development include:
 
 - NixOS and declarative systems
 - Self-hosted infrastructure
+- Wayland desktops built with Quickshell and Niri
 - Open-source software
 - Rust and systems programming
 - Reproducible development environments
