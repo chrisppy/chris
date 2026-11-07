@@ -1,7 +1,7 @@
+author      = "Chris Palmer"
 base_url    = "https://chris.palmerlife.online"
 description = "Software engineer, NixOS enthusiast, and builder of things."
 title       = "Chris Palmer"
-author      = "Chris Palmer"
 
 default_language = "en"
 
