@@ -17,5 +17,9 @@ taxonomies = [{ name = "tags", feed = true }]
 [extra]
 # Put all your custom variables here
 
+# The Zola to build with, everywhere: set ZOLA_VERSION in Cloudflare Pages to
+# this too. CI fails when nixpkgs' Zola differs (.github/workflows/build.yml).
+zola_version = "0.23.6"
+
 [markdown]
 github_alerts = true

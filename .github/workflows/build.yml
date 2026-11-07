@@ -1,0 +1,48 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+  # "Update flake inputs" pushes with the built-in token, which doesn't
+  # start other workflows, so check its lock updates when it finishes.
+  workflow_run:
+    workflows: ["Update flake inputs"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+
+      # Cloudflare Pages builds with the Zola in its ZOLA_VERSION setting,
+      # and the dev shell with nixpkgs' Zola. extra.zola_version in zola.toml
+      # records the one both should use: when nixpkgs moves on, update it
+      # and ZOLA_VERSION.
+      - name: Check the Zola version
+        run: |
+          want=$(nix eval --raw --impure --expr \
+            '(builtins.fromTOML (builtins.readFile ./zola.toml)).extra.zola_version')
+          have=$(nix eval --raw --inputs-from . nixpkgs#zola.version)
+          if [ "$have" != "$want" ]; then
+            echo "::error::nixpkgs has Zola $have but zola.toml says $want." \
+              "Set extra.zola_version and Cloudflare's ZOLA_VERSION to $have."
+            exit 1
+          fi
+          echo "Zola $have"
+
+      - name: Build the site
+        run: nix shell --inputs-from . nixpkgs#zola --command zola build
+
+      - name: Run flake checks (formatting)
+        run: nix flake check --print-build-logs
