@@ -1,6 +1,7 @@
 base_url    = "https://chris.palmerlife.online"
 description = "Software engineer, NixOS enthusiast, and builder of things."
 title       = "Chris Palmer"
+author      = "Chris Palmer"
 
 default_language = "en"
 
@@ -14,7 +15,6 @@ generate_feeds = true
 taxonomies = [{ name = "tags", feed = true }]
 
 [extra]
-author = "Chris Palmer"
 # Put all your custom variables here
 
 [markdown]
