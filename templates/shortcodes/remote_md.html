@@ -1,0 +1,29 @@
+{#-
+    Render a remote markdown file (e.g. a project's README) at build time.
+
+    Args:
+        url          raw URL of the markdown file (required)
+        strip_title  drop a leading "# Title" line, since the page already has one
+        stop_at      drop everything from this text onward, e.g. "## License"
+        link_from    a link target to rewrite, e.g. "./docs/usage.md"
+        link_to      what to rewrite link_from to, e.g. "#usage"
+        base         prefix for remaining relative "./" links, e.g. a GitHub blob URL
+-#}
+{%- set md = load_data(url=url, format="plain", required=false) -%}
+{%- if md -%}
+    {%- if strip_title | default(value=false) and md is starting_with("# ") -%}
+        {%- set md = md | split(pat="\n") | slice(start=1) | join(sep="\n") -%}
+    {%- endif -%}
+    {%- if stop_at | default(value="") -%}
+        {%- set md = md | split(pat=stop_at) | first -%}
+    {%- endif -%}
+    {%- if link_from | default(value="") -%}
+        {%- set md = md | replace(from="](" ~ link_from ~ ")", to="](" ~ link_to ~ ")") -%}
+    {%- endif -%}
+    {%- if base | default(value="") -%}
+        {%- set md = md | replace(from="](./", to="](" ~ base) -%}
+    {%- endif -%}
+    {{ md | markdown | safe }}
+{%- else -%}
+    <p><em>Couldn't load <a href="{{ url }}">{{ url }}</a>.</em></p>
+{%- endif -%}
