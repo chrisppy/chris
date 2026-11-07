@@ -1,9 +1,6 @@
 # Zola output
 /public/
 
-# Generated theme
-# /sass/_camden.scss
-
 # Nix
 /result
 /result-*
