@@ -1,30 +1,30 @@
-@use "camden";
+@use "theme";
 
 :root {
-  --background: #{camden.$base00};
-  --background-secondary: #{camden.$base01};
-  --background-highlight: #{camden.$base02};
+  --background: #{theme.$base00};
+  --background-secondary: #{theme.$base01};
+  --background-highlight: #{theme.$base02};
 
-  --foreground-muted: #{camden.$base04};
-  --foreground: #{camden.$base05};
-  --foreground-bright: #{camden.$base06};
-  --foreground-maximum: #{camden.$base07};
+  --foreground-muted: #{theme.$base04};
+  --foreground: #{theme.$base05};
+  --foreground-bright: #{theme.$base06};
+  --foreground-maximum: #{theme.$base07};
 
-  --red: #{camden.$base08};
-  --orange: #{camden.$base09};
-  --yellow: #{camden.$base0A};
-  --green: #{camden.$base0B};
-  --cyan: #{camden.$base0C};
-  --blue: #{camden.$base0D};
-  --magenta: #{camden.$base0E};
-  --gray: #{camden.$base0F};
+  --red: #{theme.$base08};
+  --orange: #{theme.$base09};
+  --yellow: #{theme.$base0A};
+  --green: #{theme.$base0B};
+  --cyan: #{theme.$base0C};
+  --blue: #{theme.$base0D};
+  --magenta: #{theme.$base0E};
+  --gray: #{theme.$base0F};
 
-  --red-bright: #{camden.$base12};
-  --yellow-bright: #{camden.$base13};
-  --green-bright: #{camden.$base14};
-  --cyan-bright: #{camden.$base15};
-  --blue-bright: #{camden.$base16};
-  --magenta-bright: #{camden.$base17};
+  --red-bright: #{theme.$base12};
+  --yellow-bright: #{theme.$base13};
+  --green-bright: #{theme.$base14};
+  --cyan-bright: #{theme.$base15};
+  --blue-bright: #{theme.$base16};
+  --magenta-bright: #{theme.$base17};
 
   --font-mono:
     "SFMono-Regular", "Cascadia Mono", "Cascadia Code", "Roboto Mono",

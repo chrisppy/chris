@@ -6,8 +6,6 @@
 
     let
       base24 = inputs.base24-themes.lib.base24;
-      # Camden was renamed Birdland in base24-themes, and its themes moved
-      # under lib.base24. The generated file keeps its _camden.scss name.
       theme = base24.themes.birdland;
       colors = base24.getColors theme;
 
@@ -33,8 +31,8 @@
       '';
     in
     {
-      packages.generate-camden-scss = pkgs.writeShellApplication {
-        name = "generate-camden-scss";
+      packages.generate-theme-scss = pkgs.writeShellApplication {
+        name = "generate-theme-scss";
 
         runtimeInputs = [
           pkgs.coreutils
@@ -43,13 +41,14 @@
         text = ''
           set -euo pipefail
 
-          output="''${1:-sass/_camden.scss}"
+          output="''${1:-sass/_theme.scss}"
 
           mkdir -p "$(dirname "$output")"
 
+          # generatedScss ends in a newline, so the delimiter follows it
+          # directly: no trailing blank line for the formatter to remove.
           cat > "$output" <<'THEME_SCSS'
-          ${generatedScss}
-          THEME_SCSS
+          ${generatedScss}THEME_SCSS
 
           echo "Generated $output"
         '';

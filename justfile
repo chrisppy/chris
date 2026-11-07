@@ -2,7 +2,7 @@ default:
     @just --list
 
 theme:
-    nix run .#generate-camden-scss
+    nix run .#generate-theme-scss
 
 prepare: theme
 
