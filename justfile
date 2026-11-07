@@ -22,3 +22,9 @@ rebuild: clean build
 
 fmt:
     nix fmt
+
+update:
+    nix flake update
+
+update-input input:
+    nix flake update {{ input }}
