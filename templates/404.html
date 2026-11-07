@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Not found · {{ config.title }}{% endblock title %}
+{% block description %}This page doesn't exist.{% endblock description %}
+{% block content %}
+    <section class="hero" aria-labelledby="not-found-title">
+        <h1 id="not-found-title" class="hero-title">404</h1>
+        <p class="hero-subtitle">No such file or directory.</p>
+        <div class="content">
+            <p>The page you're looking for isn't here. It may have moved, or the link may be wrong.</p>
+            <p>
+                <a href="{{ config.base_url }}">~/</a>
+                ·
+                <a href="{{ get_url(path='@/projects/_index.md') }}">./projects</a>
+                ·
+                <a href="{{ get_url(path='@/blog/_index.md') }}">./blog</a>
+            </p>
+        </div>
+    </section>
+{% endblock content %}
