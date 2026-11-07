@@ -16,3 +16,6 @@ taxonomies = [{ name = "tags", feed = true }]
 [extra]
 author = "Chris Palmer"
 # Put all your custom variables here
+
+[markdown]
+github_alerts = true

@@ -119,3 +119,24 @@ blockquote {
   background: var(--background-secondary);
   color: var(--foreground-muted);
 }
+
+// GitHub-style alerts (> [!NOTE] etc.), enabled by markdown.github_alerts.
+@each $kind, $label, $color in (note, "Note", blue), (tip, "Tip", green),
+  (important, "Important", magenta), (warning, "Warning", yellow),
+  (caution, "Caution", red) {
+  .markdown-alert-#{$kind} {
+    border-left-color: var(--#{$color});
+
+    &::before {
+      content: $label;
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--#{$color});
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
