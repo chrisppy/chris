@@ -1,0 +1,34 @@
+{#-
+    Components, usable from templates and from markdown content (Zola >= 0.23).
+
+    remote_md: fetch a remote markdown file (e.g. a project's README) at build
+    time and render it to HTML.
+
+        url          raw URL of the markdown file
+        strip_title  drop a leading "# Title" line, since the page already has one
+        stop_at      drop everything from this text onward, e.g. "## License"
+        link_from    a link target to rewrite, e.g. "./docs/usage.md"
+        link_to      what to rewrite link_from to, e.g. "#usage"
+        base         prefix for remaining relative "./" links, e.g. a GitHub blob URL
+-#}
+{%- component remote_md(url: string, strip_title: bool = false, stop_at: string = "", link_from: string = "", link_to: string = "", base: string = "") -%}
+    {%- set md = load_data(url=url, format="plain", required=false) -%}
+    {%- if md -%}
+        {%- if strip_title and md is starting_with(pat="# ") -%}
+            {%- set lines = md | split(pat="\n") -%}
+            {%- set md = lines[1:] | join(sep="\n") -%}
+        {%- endif -%}
+        {%- if stop_at -%}
+            {%- set md = md | split(pat=stop_at) | first -%}
+        {%- endif -%}
+        {%- if link_from -%}
+            {%- set md = md | replace(from="](" ~ link_from ~ ")", to="](" ~ link_to ~ ")") -%}
+        {%- endif -%}
+        {%- if base -%}
+            {%- set md = md | replace(from="](./", to="](" ~ base) -%}
+        {%- endif -%}
+        {{ md | markdown | safe }}
+    {%- else -%}
+        <p><em>Couldn't load <a href="{{ url }}">{{ url }}</a>.</em></p>
+    {%- endif -%}
+{%- endcomponent remote_md -%}
