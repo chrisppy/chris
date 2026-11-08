@@ -1,7 +1,7 @@
 +++
 title = "Six Weeks, Five New Repos"
 date = 2026-11-07
-description = "What I've built since my first post: a formatting flake, a FreeCAD flake, a Base24 theme library, a Quickshell desktop and a self-hosted feed reader."
+description = "What I've built since my first post: a formatting flake, a FreeCAD flake, a Base24 theme library, a Quickshell desktop, and a self-hosted feed reader."
 
 [taxonomies]
 tags = ["nix", "nixos", "open-source", "quickshell", "rust", "swift", "website"]
@@ -14,7 +14,7 @@ sixth, and nearly 170 commits. Here's what they are and how they fit together.
 ## devfmt: one formatting setup for everything
 
 The first thing I built was the boring part. Every repo I start needs a
-formatter, a lint pass and a CI check, and I was tired of copying the same
+formatter, a lint pass, and a CI check, and I was tired of copying the same
 treefmt setup around and letting each copy drift.
 
 [devfmt](/projects/devfmt/) is a flake-parts module built on treefmt-nix. A
@@ -41,7 +41,7 @@ living in a preferences dialog.
 [base24-themes](/projects/base24-themes/) started life as a YAML color scheme
 and is now a small Nix library. Themes are plain Nix files. They're validated
 for missing or malformed colors, and converters turn them into YAML, JSON, SCSS,
-QML and SVG previews. A single module for NixOS and Home Manager exposes the
+QML, and SVG previews. A single module for NixOS and Home Manager exposes the
 selected theme as `config.lib.base24`.
 
 Along the way the dark theme I'd been calling Camden was renamed **Birdland**
@@ -60,12 +60,12 @@ It's split into separate apps, named the way you'd expect from an Orioles fan:
 
 - **bullpen**: a status bar on every monitor, with workspaces, the focused
   window, media, tray, and indicators for CPU, memory, GPU, network, audio,
-  battery and weather
+  battery, and weather
 - **dugout**: an application launcher on the focused monitor
 - **lineup**: a dock of favorite and running apps
 - **outfield**: wallpapers, including rotating folders and per-monitor choices
-- **scoreboard**: notification pop-ups
-- **jumbotron**: a pop-up when volume, mic mute or brightness changes
+- **announcer**: notification pop-ups
+- **jumbotron**: a pop-up when volume, mic mute, or brightness changes
 - **tarp**: a lock screen that also turns the monitors off when idle
 - **gate**: a greetd login screen, set up through the NixOS module
 
@@ -76,7 +76,7 @@ changes, doesn't take your open windows down with it.
 ## pressbox: a feed reader with no website
 
 The newest project, published today, is [pressbox](/projects/pressbox/). It's a
-self-hosted RSS, Atom and JSON Feed aggregator. You declare the feeds and the
+self-hosted RSS, Atom, and JSON Feed aggregator. You declare the feeds and the
 people who use them in your NixOS configuration, and a small Rust server polls
 them into SQLite with a search index. Clients share read and starred state
 through its HTTP API.
@@ -88,7 +88,7 @@ already paired. The clients so far are:
 - a terminal reader built with ratatui
 - a feeds module in Birdland's bar showing the unread count
 - [pressbox-ios](/projects/pressbox-ios/), a SwiftUI app with offline reading,
-  search, optional Face ID and an unread badge on the icon
+  search, optional Face ID, and an unread badge on the icon
 
 Both pressbox repos are at 0.1.0 and very much in their early days.
 
@@ -99,14 +99,14 @@ A few things run through all of these:
 - **Automated flake updates.** Every repo got an `update-flake-lock` workflow in
   mid-October. Most of the commit count since then is those bots keeping inputs
   current, which is exactly the point.
-- **A justfile everywhere**, so `just fmt`, `just build` and friends work the
+- **A justfile everywhere**, so `just fmt`, `just build`, and friends work the
   same way in every repo.
 - **Docs split into pages.** Each README now stays short and links to a `docs/`
-  folder for usage, options and per-component details.
+  folder for usage, options, and per-component details.
 
 ## And this site
 
-The day after the first post I filled out the home, About and Skills pages. On
+The day after the first post I filled out the home, About, and Skills pages. On
 October 1 I added a [License](/license/) page: the code behind the site is MIT
 and the writing is CC BY 4.0.
 
