@@ -87,8 +87,9 @@ already paired. The clients so far are:
 
 - a terminal reader built with ratatui
 - a feeds module in Birdland's bar showing the unread count
-- [pressbox-ios](/projects/pressbox-ios/), a SwiftUI app with offline reading,
-  search, optional Face ID, and an unread badge on the icon
+- [pressbox-darwin](/projects/pressbox-darwin/) (then pressbox-ios), a SwiftUI
+  app with offline reading, search, optional Face ID, and an unread badge on the
+  icon
 
 Both pressbox repos are at 0.1.0 and very much in their early days.
 

@@ -9,12 +9,12 @@ template = "page.html"
 I build and maintain enterprise software across multiple layers of the
 application stack.
 
-- **Languages:** Go, Java, Rust, Swift, QML, Hare
-- **Applications:** backend services, desktop applications, web services, iOS
-  apps
-- **UI frameworks:** SwiftUI, Qt Quick / Quickshell
+- **Languages:** Go, Java, Rust, Swift, Kotlin, QML, Hare
+- **Applications:** backend services, desktop applications, web services, iOS,
+  macOS, and Android apps
+- **UI frameworks:** SwiftUI, Jetpack Compose, iced, Qt Quick / Quickshell
 - **Integration:** REST, SOAP, JMS, XML, JSON, RSS/Atom/JSON Feed
-- **Build & dependency management:** Maven
+- **Build & dependency management:** Maven, Gradle, Cargo
 
 ## Systems & Infrastructure
 
