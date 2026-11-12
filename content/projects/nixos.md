@@ -11,8 +11,11 @@ remote_md = [{ url = "https://raw.githubusercontent.com/chrisppy/nixos/master/RE
 +++
 
 This flake is where my other projects get used day to day:
-[base24-themes](/projects/base24-themes/), [birdland](/projects/birdland/),
-[devfmt](/projects/devfmt/), [freecad-flake](/projects/freecad-flake/), and
-[pressbox](/projects/pressbox/) are all inputs to this flake.
+[base24-themes](https://red-oxide.org/projects/base24-themes/),
+[birdland](https://red-oxide.org/projects/birdland/),
+[devfmt](https://red-oxide.org/projects/devfmt/),
+[freecad-flake](/projects/freecad-flake/), and
+[pressbox](https://red-oxide.org/projects/pressbox/) are all inputs to this
+flake.
 
 Source: [github.com/chrisppy/nixos](https://github.com/chrisppy/nixos)

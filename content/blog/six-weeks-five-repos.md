@@ -17,7 +17,7 @@ The first thing I built was the boring part. Every repo I start needs a
 formatter, a lint pass, and a CI check, and I was tired of copying the same
 treefmt setup around and letting each copy drift.
 
-[devfmt](/projects/devfmt/) is a flake-parts module built on treefmt-nix. A
+[devfmt](https://red-oxide.org/projects/devfmt/) is a flake-parts module built on treefmt-nix. A
 flake that builds with `devfmt.lib.mkFlake` gets `nix fmt` for the whole tree
 and a treefmt check in `nix flake check`. It has one strict rule: every file in
 the repo is formatted by something or explicitly excluded.
@@ -38,7 +38,7 @@ living in a preferences dialog.
 
 ## base24-themes: one palette, many formats
 
-[base24-themes](/projects/base24-themes/) started life as a YAML color scheme
+[base24-themes](https://red-oxide.org/projects/base24-themes/) started life as a YAML color scheme
 and is now a small Nix library. Themes are plain Nix files. They're validated
 for missing or malformed colors, and converters turn them into YAML, JSON, SCSS,
 QML, and SVG previews. A single module for NixOS and Home Manager exposes the
@@ -50,7 +50,7 @@ this site's colors.
 
 ## Birdland: a desktop shell
 
-[Birdland](/projects/birdland/) is the biggest of the bunch, with 45 commits
+[Birdland](https://red-oxide.org/projects/birdland/) is the biggest of the bunch, with 45 commits
 since its first one on October 19. It's a desktop shell suite for the Niri
 compositor, written in QML on top of Quickshell and configured entirely through
 Home Manager. It's themed by base24-themes, so changing the palette changes the
@@ -75,7 +75,7 @@ changes, doesn't take your open windows down with it.
 
 ## pressbox: a feed reader with no website
 
-The newest project, published today, is [pressbox](/projects/pressbox/). It's a
+The newest project, published today, is [pressbox](https://red-oxide.org/projects/pressbox/). It's a
 self-hosted RSS, Atom, and JSON Feed aggregator. You declare the feeds and the
 people who use them in your NixOS configuration, and a small Rust server polls
 them into SQLite with a search index. Clients share read and starred state
@@ -87,7 +87,7 @@ already paired. The clients so far are:
 
 - a terminal reader built with ratatui
 - a feeds module in Birdland's bar showing the unread count
-- [pressbox-darwin](/projects/pressbox-darwin/) (then pressbox-ios), a SwiftUI
+- [pressbox-darwin](https://red-oxide.org/projects/pressbox-darwin/) (then pressbox-ios), a SwiftUI
   app with offline reading, search, optional Face ID, and an unread badge on the
   icon
 

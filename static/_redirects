@@ -1,0 +1,9 @@
+# Projects that moved to the red-oxide GitHub org now have their pages on
+# red-oxide.org. Cloudflare Pages reads this file.
+/projects/base24-themes/*     https://red-oxide.org/projects/base24-themes/:splat     301
+/projects/birdland/*          https://red-oxide.org/projects/birdland/:splat          301
+/projects/devfmt/*            https://red-oxide.org/projects/devfmt/:splat            301
+/projects/pressbox/*          https://red-oxide.org/projects/pressbox/:splat          301
+/projects/pressbox-android/*  https://red-oxide.org/projects/pressbox-android/:splat  301
+/projects/pressbox-darwin/*   https://red-oxide.org/projects/pressbox-darwin/:splat   301
+/projects/pressbox-ios/*      https://red-oxide.org/projects/pressbox-darwin/         301
