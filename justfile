@@ -1,15 +1,10 @@
 default:
     @just --list
 
-theme:
-    nix run .#generate-theme-scss
-
-prepare: theme
-
-serve: prepare
+serve:
     zola serve
 
-build: prepare
+build:
     zola build
 
 check:
@@ -25,6 +20,10 @@ fmt:
 
 update:
     nix flake update
+
+# Pull the newest rivet into themes/rivet (commit the result)
+update-rivet:
+    git submodule update --remote themes/rivet
 
 update-input input:
     nix flake update {{ input }}

@@ -3,6 +3,8 @@ base_url    = "https://chris.palmerlife.online"
 description = "Software engineer, NixOS enthusiast, and builder of things."
 title       = "Chris Palmer"
 
+theme = "rivet"
+
 default_language = "en"
 
 build_search_index = false
@@ -15,11 +17,19 @@ generate_feeds = true
 taxonomies = [{ name = "tags", feed = true }]
 
 [extra]
-# Put all your custom variables here
 
 # The Zola to build with, everywhere: set ZOLA_VERSION in Cloudflare Pages to
 # this too. CI fails when nixpkgs' Zola differs (.github/workflows/build.yml).
 zola_version = "0.23.6"
+
+# rivet's settings (themes/rivet/README.md)
+[extra.rivet]
+footer_links    = [{ name = "MIT / CC BY 4.0", path = "license/" }]
+hero_image      = { src = "avatar-256.webp", src_2x = "avatar-512.webp", size = 128 }
+nav             = [{ name = "about", path = "about/" }, { name = "skills", path = "skills/" }, { name = "projects", path = "projects/" }, { name = "blog", path = "blog/" }]
+not_found_links = [{ name = "projects", path = "@/projects/_index.md" }, { name = "blog", path = "@/blog/_index.md" }]
+og_image        = { path = "avatar-512.jpg", width = 512, height = 512 }
+recent          = { section = "blog/_index.md", count = 5, heading = "Recent posts" }
 
 [markdown]
 github_alerts = true

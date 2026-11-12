@@ -1,0 +1,3 @@
+[submodule "themes/rivet"]
+	path = themes/rivet
+	url = https://github.com/red-oxide/rivet.git
