@@ -14,13 +14,13 @@
       "locked": {
         "lastModified": 1794490258,
         "narHash": "sha256-fpwUGcO3/FkfDGvqqiL5ee9OlaQYqldy+ln/Rgq++cA=",
-        "owner": "chrisppy",
+        "owner": "red-oxide",
         "repo": "devfmt",
         "rev": "8221b4f723b101e0058352e719f0f151643ba117",
         "type": "github"
       },
       "original": {
-        "owner": "chrisppy",
+        "owner": "red-oxide",
         "repo": "devfmt",
         "type": "github"
       }
