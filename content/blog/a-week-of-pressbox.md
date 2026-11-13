@@ -61,8 +61,8 @@ The clients now look like this:
   starred state with the other clients and plays podcasts through Media3. It's
   GPL-3.0-only.
 
-All three pressbox repos also switched to versions of the form
-`YY.MINOR.PATCH`, so the first real release will be 26.0.0.
+All three pressbox repos also switched to versions of the form `YY.MINOR.PATCH`,
+so the first real release will be 26.0.0.
 
 ## Birdland
 
