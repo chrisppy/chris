@@ -24,6 +24,7 @@ zola_version = "0.23.6"
 
 # rivet's settings (themes/rivet/README.md)
 [extra.rivet]
+feed_image = "avatar-512.jpg"
 footer_links = [{ name = "MIT / CC BY 4.0", path = "license/" }]
 hero_image = { src = "avatar-256.webp", src_2x = "avatar-512.webp", size = 128 }
 nav = [
@@ -36,7 +37,6 @@ not_found_links = [
   { name = "projects", path = "@/projects/_index.md" },
   { name = "blog", path = "@/blog/_index.md" },
 ]
-feed_image = "avatar-512.jpg"
 og_image = { path = "avatar-512.jpg", width = 512, height = 512 }
 recent = { section = "blog/_index.md", count = 5, heading = "Recent posts" }
 
