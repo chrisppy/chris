@@ -36,6 +36,7 @@ not_found_links = [
   { name = "projects", path = "@/projects/_index.md" },
   { name = "blog", path = "@/blog/_index.md" },
 ]
+feed_image = "avatar-512.jpg"
 og_image = { path = "avatar-512.jpg", width = 512, height = 512 }
 recent = { section = "blog/_index.md", count = 5, heading = "Recent posts" }
 
