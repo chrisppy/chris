@@ -13,13 +13,13 @@ got a lot closer by getting smaller.
 
 ## pressbox 26.0.0
 
-On Tuesday I tagged [pressbox](https://red-oxide.org/projects/pressbox/)
-26.0.0, its first real release. The full announcement is on
+On Tuesday I tagged [pressbox](https://red-oxide.org/projects/pressbox/) 26.0.0,
+its first real release. The full announcement is on
 [red-oxide.org](https://red-oxide.org/news/pressbox-26-0-0/), so here's the
 short version: a Rust server you configure in NixOS, podcasts with chapters,
 transcripts, and a shared Up Next queue, and terminal and desktop clients. The
-0.1.0 from my first roundup was never tagged, so it was folded into
-26.0.0 rather than kept as its own entry in the changelog.
+0.1.0 from my first roundup was never tagged, so it was folded into 26.0.0
+rather than kept as its own entry in the changelog.
 
 Most of the days before the tag went into hardening rather than features.
 pressboxd fetches whatever URLs its feeds point at, so it now refuses to fetch
@@ -41,17 +41,17 @@ A few smaller things went in on the way:
 
 ## pressbox-darwin: tiles, and less Mac
 
-The iPhone app changed shape this week. Feeds and items are tiles now instead
-of lists, with artwork where a feed has it and the title on the tile where it
+The iPhone app changed shape this week. Feeds and items are tiles now instead of
+lists, with artwork where a feed has it and the title on the tile where it
 doesn't. The feed list is grouped into sections by tag, so a feed with several
 tags shows up in each of them. Getting the tiles without artwork right took most
 of a Saturday and more commits than I'd like to admit, all of them adjusting one
 shade of orange.
 
-The bigger change was scope. pressbox-darwin builds for iPhone only for now,
-and the Mac code is gone entirely. Getting one platform right comes first. The
-iPad code stayed, and the Mac can come back later, though watchOS and an Apple
-TV app for podcasts and video are ahead of it in line.
+The bigger change was scope. pressbox-darwin builds for iPhone only for now, and
+the Mac code is gone entirely. Getting one platform right comes first. The iPad
+code stayed, and the Mac can come back later, though watchOS and an Apple TV app
+for podcasts and video are ahead of it in line.
 
 Its changelog now treats 26.0.0 as its first release, and pushing a tag uploads
 a build to TestFlight. I'm still testing it by hand before I tag it.
