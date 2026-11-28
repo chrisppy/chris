@@ -1,16 +1,24 @@
 {
-  description = "A structured Base16/Base24 YAML theme flake";
+  description = "chris.palmerlife.online";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    devfmt = {
-      url = "github:red-oxide/devfmt";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
+  # No flake inputs: everything is pinned with tack in .tack/pins.toml
+  # (`just update` to move pins). Using this flake doesn't need tack; the
+  # resolver in .tack/default.nix reads the lock.
   outputs =
-    inputs:
+    { self, ... }@args:
+    let
+      pins = (import ./.tack) { overrides = args.tackOverrides or { }; };
+      # What devfmt's mkFlake (flake-parts) expects: flake-style inputs and self.
+      inputs =
+        removeAttrs pins [
+          "__functor"
+          "_meta"
+          "_patched"
+        ]
+        // {
+          inherit self;
+        };
+    in
     inputs.devfmt.lib.mkFlake { inherit inputs; } {
       imports = [
         (inputs.devfmt.lib.importTree ./nix)
