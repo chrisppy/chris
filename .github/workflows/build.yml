@@ -5,10 +5,10 @@ on:
     branches: [master]
   pull_request:
   workflow_dispatch:
-  # "Update flake inputs" pushes with the built-in token, which doesn't
-  # start other workflows, so check its lock updates when it finishes.
+  # "Update pins" pushes with the built-in token, which doesn't start other
+  # workflows, so check its lock updates when it finishes.
   workflow_run:
-    workflows: ["Update flake inputs"]
+    workflows: ["Update pins"]
     types: [completed]
 
 permissions:
@@ -35,7 +35,7 @@ jobs:
         run: |
           want=$(nix eval --raw --impure --expr \
             '(builtins.fromTOML (builtins.readFile ./zola.toml)).extra.zola_version')
-          have=$(nix eval --raw --inputs-from . nixpkgs#zola.version)
+          have=$(nix eval --raw .#zola.version)
           if [ "$have" != "$want" ]; then
             echo "::error::nixpkgs has Zola $have but zola.toml says $want." \
               "Set extra.zola_version and Cloudflare's ZOLA_VERSION to $have."
@@ -44,7 +44,7 @@ jobs:
           echo "Zola $have"
 
       - name: Build the site
-        run: nix shell --inputs-from . nixpkgs#zola --command zola build
+        run: nix shell .#zola --command zola build
 
       - name: Run flake checks (formatting)
         run: nix flake check --print-build-logs

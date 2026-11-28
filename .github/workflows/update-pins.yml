@@ -1,0 +1,45 @@
+# Everything is pinned with tack (.tack/pins.toml), so this replaces the
+# shared flake-lock workflow.
+name: Update pins
+
+on:
+  schedule:
+    # Every day at 02:00 UTC
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-pins:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            extra-substituters = https://cache.manic.systems
+            extra-trusted-public-keys = cache.manic.systems-1:s6OZanN8Us8vRi0jVivP3qlMn0cYHBjBALKrNe5nH8s=
+
+      # The tack pinned for the dev shell. It reads GITHUB_TOKEN for GitHub's
+      # API, which avoids the anonymous rate limit.
+      - name: Update pins
+        run: nix develop --command tack update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Fail before committing a lock that doesn't evaluate. The Build
+      # workflow runs the full checks after this one.
+      - name: Check the flake still evaluates
+        run: nix flake check --no-build
+
+      - name: Commit and push the lock
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore: update pins"
+          file_pattern: .tack/pins.lock.json .tack/default.nix

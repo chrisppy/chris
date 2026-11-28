@@ -5,7 +5,7 @@ name: Rebuild site
 # hook saved as the CF_PAGES_DEPLOY_HOOK secret.
 on:
   schedule:
-    # After "Update flake inputs" (02:00 UTC)
+    # After "Update pins" (02:00 UTC)
     - cron: "17 3 * * *"
   workflow_dispatch:
 
